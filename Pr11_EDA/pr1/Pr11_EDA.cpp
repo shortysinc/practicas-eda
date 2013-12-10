@@ -40,6 +40,6 @@ int main()
 		//printf("No pertenece al array");
 		cout<<"No pertenece al array";
 
-	//cin.get();
+	cin.get();
 	return 0;
 }
