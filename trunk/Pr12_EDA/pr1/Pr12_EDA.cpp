@@ -75,8 +75,8 @@ int main(int argc,char **argv)
 	bool yeah = busquedaTern(a,(int) pepe,0,13);
 	int tamArray=(sizeof(a)/sizeof(*a));
 	cout<<"Tamaño de array a[]: "<<tamArray<<"\n";
+	cout<<"Elemento buscado: "<<pepe<<endl;
 	if (yeah)
-		//printf("El elemento existe en el array");
 		cout<<"El elemento "<< pepe<<" existe en el array\n";
 	else
 		cout<<"No pertenece al array\n";
