@@ -3,6 +3,10 @@
 // Author      : Jorge
 //============================================================================
 
+/*
+ Dada una lista de numeros naturales ordenada de forma creciente, disena
+ un algoritmo recursivo que determine si cierto elemento pertenece
+ a la lista haciendo una busqueda ternaria.*/
 
 #include <stdio.h>
 #include <iostream>
