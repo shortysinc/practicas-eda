@@ -38,26 +38,26 @@ bool busquedaTern(int v[], int x, int primero, int ultimo)
 {
 	if(primero <= ultimo)
 	{
-		int tamanio = 1 + ultimo - primero;
-		int terInf = primero + tamanio / 3;
-		int terSup = primero + (tamanio * 2) / 3;
+		int tam = 1 + ultimo - primero;
+		int inferior = primero + tam / 3;
+		int superior = primero + (tam * 2) / 3;
 
-		if(v[terInf] == x)
+		if(v[inferior] == x)
 		{
 			return true;
 		}
-		else if(v[terInf] > x)
+		else if(v[inferior] > x)
 		{
-			return busquedaTern(v, x, primero, terInf - 1);
+			return busquedaTern(v, x, primero, inferior - 1);
 		}
 		else
 		{
-			if(v[terSup] == x)
-				return terSup;
-			else if(v[terSup] < x)
-				return busquedaTern(v, x, terSup + 1, ultimo);
+			if(v[superior] == x)
+				return superior;
+			else if(v[superior] < x)
+				return busquedaTern(v, x, superior + 1, ultimo);
 			else
-				return busquedaTern(v, x, terInf + 1, terSup - 1);
+				return busquedaTern(v, x, inferior + 1, superior - 1);
 
 		}
 	}
