@@ -9,9 +9,11 @@
  un array. Diseña un algoritmo recursivo que determine si cierto elemento
  pertenece o no al conjunto.
  */
-#include <iostream>
 #include <stdio.h>
+#include <iostream>
 using namespace std;
+
+
 
 bool pertenece( int a[],int pos , int num, int numElementos)
 {
@@ -35,6 +37,6 @@ int main()
 	else
 		printf("No pertenece al array");
 
-	cin.get();
+//	cin.get();
 	return 0;
 }
