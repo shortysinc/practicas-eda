@@ -13,7 +13,7 @@
 using namespace std;
 
 
-int buscaBin( int v[], int x, int principio, int fin) {
+bool buscaBin( int v[], int x, int principio, int fin) {
 
 	bool res;
 	if(principio <= fin)
@@ -31,11 +31,46 @@ int buscaBin( int v[], int x, int principio, int fin) {
 	return res;
 }
 
+/**
+ * Básicamente, la idea, es hacer una búsqueda partiendo el array en tres en vez de dos
+ */
+bool busquedaTern(int v[], int x, int pri, int ult)
+{
+	if(pri <= ult)
+	{
+		int tam = 1 + ult - pri;
+		int terInf = pri + tam / 3;
+		int terSup = pri + (tam * 2) / 3;
+
+		if(v[terInf] == x)
+		{
+			return true;
+		}
+		else if(v[terInf] > x)
+		{
+			return busquedaTern(v, x, pri, terInf - 1);
+		}
+		else
+		{
+			if(v[terSup] == x)
+				return terSup;
+			else if(v[terSup] < x)
+				return busquedaTern(v, x, terSup + 1, ult);
+			else
+				return busquedaTern(v, x, terInf + 1, terSup - 1);
+
+		}
+	}
+	else
+		return false;
+
+}
+
 int main()
 {
 
 	int a[] = {1,2,3,4,5,6,7,8,9};
-	bool yeah = buscaBin(a,10,0,9);
+	bool yeah = busquedaTern(a,9,0,9);
 
 	if (yeah)
 		printf("El elemento existe en el array");
