@@ -34,13 +34,13 @@ bool buscaBin( int v[], int x, int principio, int fin) {
 /**
  * Básicamente, la idea, es hacer una búsqueda partiendo el array en tres en vez de dos
  */
-bool busquedaTern(int v[], int x, int pri, int ult)
+bool busquedaTern(int v[], int x, int primero, int ultimo)
 {
-	if(pri <= ult)
+	if(primero <= ultimo)
 	{
-		int tam = 1 + ult - pri;
-		int terInf = pri + tam / 3;
-		int terSup = pri + (tam * 2) / 3;
+		int tamanio = 1 + ultimo - primero;
+		int terInf = primero + tamanio / 3;
+		int terSup = primero + (tamanio * 2) / 3;
 
 		if(v[terInf] == x)
 		{
@@ -48,14 +48,14 @@ bool busquedaTern(int v[], int x, int pri, int ult)
 		}
 		else if(v[terInf] > x)
 		{
-			return busquedaTern(v, x, pri, terInf - 1);
+			return busquedaTern(v, x, primero, terInf - 1);
 		}
 		else
 		{
 			if(v[terSup] == x)
 				return terSup;
 			else if(v[terSup] < x)
-				return busquedaTern(v, x, terSup + 1, ult);
+				return busquedaTern(v, x, terSup + 1, ultimo);
 			else
 				return busquedaTern(v, x, terInf + 1, terSup - 1);
 
