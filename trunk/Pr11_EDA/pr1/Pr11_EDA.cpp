@@ -8,7 +8,7 @@
  Supongamos que un conjunto de numeros naturales se implementa con
  un array. Diseña un algoritmo recursivo que determine si cierto elemento
  pertenece o no al conjunto.
-*/
+ */
 #include <iostream>
 #include <stdio.h>
 using namespace std;
