@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 
@@ -66,16 +67,19 @@ bool busquedaTern(int v[], int x, int primero, int ultimo)
 
 }
 
-int main()
+int main(int argc,char **argv)
 {
 
-	int a[] = {1,2,3,4,5,6,7,8,9};
-	bool yeah = busquedaTern(a,9,0,9);
-
+	int a[] = {1,2,3,4,5,6,7,8,9,11,23,25,32,45};
+	int pepe= atoi(argv[1]);
+	bool yeah = busquedaTern(a,(int) pepe,0,13);
+	int tamArray=(sizeof(a)/sizeof(*a));
+	cout<<"Tamaño de array a[]: "<<tamArray<<"\n";
 	if (yeah)
-		printf("El elemento existe en el array");
+		//printf("El elemento existe en el array");
+		cout<<"El elemento "<< pepe<<" existe en el array\n";
 	else
-		printf("No pertenece al array");
+		cout<<"No pertenece al array\n";
 
 	return 0;
 }
