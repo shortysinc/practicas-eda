@@ -35,7 +35,7 @@ bool buscaBin( int v[], int x, int principio, int fin) {
 /**
  * Básicamente, la idea, es hacer una búsqueda partiendo el array en tres en vez de dos
  */
-bool busquedaTern(int v[], int x, int primero, int ultimo)
+bool busquedaTern(int vector[], int x, int primero, int ultimo)
 {
 	if(primero <= ultimo)
 	{
@@ -43,22 +43,22 @@ bool busquedaTern(int v[], int x, int primero, int ultimo)
 		int inferior = primero + tam / 3;
 		int superior = primero + (tam * 2) / 3;
 
-		if(v[inferior] == x)
+		if(vector[inferior] == x)
 		{
 			return true;
 		}
-		else if(v[inferior] > x)
+		else if(vector[inferior] > x)
 		{
-			return busquedaTern(v, x, primero, inferior - 1);
+			return busquedaTern(vector, x, primero, inferior - 1);
 		}
 		else
 		{
-			if(v[superior] == x)
+			if(vector[superior] == x)
 				return superior;
-			else if(v[superior] < x)
-				return busquedaTern(v, x, superior + 1, ultimo);
+			else if(vector[superior] < x)
+				return busquedaTern(vector, x, superior + 1, ultimo);
 			else
-				return busquedaTern(v, x, inferior + 1, superior - 1);
+				return busquedaTern(vector, x, inferior + 1, superior - 1);
 
 		}
 	}
@@ -70,12 +70,17 @@ bool busquedaTern(int v[], int x, int primero, int ultimo)
 int main(int argc,char **argv)
 {
 
-	int a[] = {1,2,3,4,5,6,7,8,9,11,23,25,32,45};
+	int vector[] = {1,2,3,4,5,6,7,8,9,11,23,25,32,45};
 	int pepe= atoi(argv[1]);
-	bool yeah = busquedaTern(a,(int) pepe,0,13);
-	int tamArray=(sizeof(a)/sizeof(*a));
-	cout<<"Tamaño de array a[]: "<<tamArray<<"\n";
-	cout<<"Elemento buscado: "<<pepe<<endl;
+	bool yeah = busquedaTern(vector,(int) pepe,0,13);
+	int tamArray=(sizeof(vector)/sizeof(*vector));
+	cout<<"Tamaño de array vector[]: "<<tamArray<<"\n";
+	cout<<"Los Elementos de array son: ";
+	for (int i = 0; i < tamArray; ++i)
+	{
+		cout<<vector[i]<<" ";
+	}
+	cout<<"\nElemento buscado: "<<pepe<<endl;
 	if (yeah)
 		cout<<"El elemento "<< pepe<<" existe en el array\n";
 	else
