@@ -71,7 +71,9 @@ int main(int argc,char **argv)
 {
 
 	int vector[] = {1,2,3,4,5,6,7,8,9,11,23,25,32,45};
-	int pepe= atoi(argv[1]);
+	//int pepe= atoi(argv[1]);
+	int pepe;
+	cin>>pepe;
 	bool yeah = busquedaTern(vector,(int) pepe,0,13);
 	int tamArray=(sizeof(vector)/sizeof(*vector));
 	cout<<"Tamaño de array vector[]: "<<tamArray<<"\n";
