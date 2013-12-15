@@ -33,10 +33,11 @@ int main()
 	bool yeah = pertenece(a,0,10,9);
 
 	if (yeah)
-		printf("El elemento existe en el array");
+		//printf("El elemento existe en el array");
+		cout<<"El elemento existe en el array\n";
 	else
-		printf("No pertenece al array");
-
+		//printf("No pertenece al array");
+		cout<<"No pertenece al array\n";
 //	cin.get();
 	return 0;
 }
