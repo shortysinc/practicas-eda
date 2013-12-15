@@ -56,9 +56,9 @@ bool busquedaTern(int vector[], int x, int primero, int ultimo)
 			if(vector[superior] == x)
 				return superior;
 			else if(vector[superior] < x)
-				return busquedaTern(vector, x, superior++, ultimo);
+				return busquedaTern(vector, x, superior+1, ultimo);
 			else
-				return busquedaTern(vector, x, inferior++, superior--);
+				return busquedaTern(vector, x, inferior+1, superior-1);
 
 		}
 	}
