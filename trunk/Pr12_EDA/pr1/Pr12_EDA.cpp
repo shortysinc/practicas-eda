@@ -39,7 +39,7 @@ bool busquedaTern(int vector[], int x, int primero, int ultimo)
 {
 	if(primero <= ultimo)
 	{
-		int tam = 1 + ultimo - primero;
+		int tam = 1 + ultimo - primero; //(1+13+0) = 14
 		int inferior = primero + tam / 3;
 		int superior = primero + (tam * 2) / 3;
 
@@ -49,16 +49,16 @@ bool busquedaTern(int vector[], int x, int primero, int ultimo)
 		}
 		else if(vector[inferior] > x)
 		{
-			return busquedaTern(vector, x, primero, inferior - 1);
+			return busquedaTern(vector, x, primero, inferior--);
 		}
 		else
 		{
 			if(vector[superior] == x)
 				return superior;
 			else if(vector[superior] < x)
-				return busquedaTern(vector, x, superior + 1, ultimo);
+				return busquedaTern(vector, x, superior++, ultimo);
 			else
-				return busquedaTern(vector, x, inferior + 1, superior - 1);
+				return busquedaTern(vector, x, inferior++, superior--);
 
 		}
 	}
