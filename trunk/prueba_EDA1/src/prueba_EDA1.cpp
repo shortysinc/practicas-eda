@@ -48,19 +48,12 @@ int main()
 	if((noEstaEnElArray(vector,numerobuscado,tamVector)))
 	{
 		suma=sumaVec(vector, numerobuscado);
-		cout<<suma<<endl;
+		cout<<"La suma de los elementos del vector es: "<<suma<<endl;
 	}
 	else
 	{
 		cout<<"El numero no se encuentra en el vector";
 	}
-//	int aux=0;
-//	for (int i = 0; i < tamVector; ++i) {
-//		aux=vector[i]+aux;
-//
-//	}
-//	cout<<aux<<endl;
-
 	return 0;
 }
 
