@@ -49,7 +49,7 @@ bool busquedaTern(int vector[], int x, int primero, int ultimo)
 		}
 		else if(vector[inferior] > x)
 		{
-			return busquedaTern(vector, x, primero, inferior--);
+			return busquedaTern(vector, x, primero, inferior-1);
 		}
 		else
 		{
